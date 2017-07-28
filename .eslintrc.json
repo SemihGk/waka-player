@@ -1,0 +1,56 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "impliedStrict": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jasmine": true
+  },
+  "globals": {
+    "require": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "eqeqeq": "error",
+    "dot-location": ["error", "property"],
+    "yoda": "error",
+    "array-bracket-spacing": ["error", "never"],
+    "block-spacing": ["error", "always"],
+    "brace-style": ["error", "1tbs"],
+    "comma-dangle": ["error", "never"],
+    "comma-spacing": "error",
+    "comma-style": "error",
+    "eol-last": "error",
+    "func-call-spacing": "error",
+    "indent": ["error", 2, {"SwitchCase": 1}],
+    "key-spacing": "error",
+    "keyword-spacing": "error",
+    "max-len": ["error", {"code": 120}],
+    "new-parens": "error",
+    "newline-before-return": "error",
+    "newline-per-chained-call": "error",
+    "no-mixed-spaces-and-tabs": "error",
+    "no-trailing-spaces": "error",
+    "no-whitespace-before-property": "error",
+    "object-curly-spacing": "error",
+    "object-property-newline": "error",
+    "space-before-blocks": "error",
+    "space-before-function-paren": "error",
+    "space-in-parens": "error",
+    "space-unary-ops": "error",
+    "arrow-parens": "error",
+    "arrow-spacing": "error",
+    "no-var": "error",
+    "object-shorthand": ["error", "methods"],
+    "prefer-const": "error",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "spaced-comment": "error"
+  }
+}
