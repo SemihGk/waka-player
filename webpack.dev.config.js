@@ -9,7 +9,7 @@ module.exports = {
       path.join(__dirname, 'client/app.js')
     ],
   },
-  devtool: 'source-map',
+  devtool: 'eval-source-map',
   output: {
     path: path.resolve(__dirname, 'dist/development'),
     filename: 'bundle.js',
@@ -26,7 +26,8 @@ module.exports = {
 
   resolve: {
     modules: [
-      'node_modules'
+      'node_modules',
+      'client'
     ]
   },
 
@@ -62,8 +63,17 @@ module.exports = {
       from: (__dirname + '/dist/assets'),
       to: (__dirname + `/dist/development`)
     }, {
-      from: (__dirname + '/node_modules/shaka-player/**/*'),
+      from: (__dirname + '/node_modules/shaka-player/lib'),
+      to: (__dirname + `/dist/development/lib`)
+    }, {
+      from: (__dirname + '/node_modules/shaka-player/third_party'),
+      to: (__dirname + `/dist/development/third_party`)
+    }, {
+      from: (__dirname + '/node_modules/shaka-player/shaka-player.uncompiled.js'),
       to: (__dirname + `/dist/development`)
+    }, {
+      from: (__dirname + '/node_modules/shaka-player/dist'),
+      to: (__dirname + `/dist/development/dist`)
     }])
 
 

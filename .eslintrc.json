@@ -12,7 +12,8 @@
     "jasmine": true
   },
   "globals": {
-    "require": true
+    "require": true,
+    "process": true
   },
   "extends": "eslint:recommended",
   "rules": {
@@ -34,6 +35,7 @@
     "new-parens": "error",
     "newline-before-return": "error",
     "newline-per-chained-call": "error",
+    "no-console": 0,
     "no-mixed-spaces-and-tabs": "error",
     "no-trailing-spaces": "error",
     "no-whitespace-before-property": "error",

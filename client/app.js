@@ -1,9 +1,16 @@
-/**
-* Import shaka player libraries
-*
-*/
+import ShakaPlayer from 'players/shaka-player';
+// import HlsPlayer from 'players/hls-player';
 
-require('!script-loader!shaka-player/third_party/closure/goog/base');
-require('!script-loader!shaka-player/dist/deps');
-require('!script-loader!shaka-player/shaka-player.uncompiled');
-require('./video-player');
+class App {
+  constructor (props) {
+    this.shaka = new ShakaPlayer();
+    // this.hls = new HlsPlayer();
+
+    this.shaka.play();
+    console.log(this.shaka);
+    this[props] = props;
+  }
+
+}
+
+export default new App();
