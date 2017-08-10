@@ -20,4 +20,8 @@ export default class VideoPlayer {
       this._player = _player;
     }
   }
+
+  getErrorMessage (message) {
+    console.log(message);
+  }
 }

@@ -1,25 +1,35 @@
 const path = require('path'),
   webpack = require('webpack'),
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
   copyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: [
-      'babel-polyfill',
+    core: [
       path.join(__dirname, 'client/app.js')
     ],
+    player: [
+      path.join(__dirname, 'client/players/shaka-player/index.js')
+    ]
   },
 
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
+
+  devServer: {
+    historyApiFallback: true,
+    contentBase: `dist/production`,
+    port: 3000
+  },
 
   output: {
     path: path.resolve(__dirname, 'dist/production'),
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
 
   resolve: {
     modules: [
-      'node_modules'
+      'node_modules',
+      'client'
     ]
   },
 
@@ -34,6 +44,10 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('production')
       }
+    }),
+    new HtmlWebpackPlugin({
+      template: 'dist/assets/sample.html',
+      inject: 'body'
     }),
     // copies assets into different environments folders
     new copyWebpackPlugin([{
