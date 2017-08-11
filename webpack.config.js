@@ -10,10 +10,13 @@ module.exports = {
     ],
     player: [
       path.join(__dirname, 'client/players/shaka-player/index.js')
+    ],
+    test: [
+      path.join(__dirname, 'client/core/video-player.js')
     ]
   },
 
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
 
   devServer: {
     historyApiFallback: true,
@@ -47,7 +50,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'dist/assets/sample.html',
-      inject: 'body'
+      inject: 'head'
     }),
     // copies assets into different environments folders
     new copyWebpackPlugin([{
